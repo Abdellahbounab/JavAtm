@@ -1,24 +1,18 @@
 package com.atm;
 
-import java.util.Date;
-
 public class Person {
 	private String CIN;
 	private	String name;
 	private	String prenom;
 	private	String gendre;
-	private	String address;
-	private	String villeDeNaissance;
 	private	String nationality;
-	private Date dateNaissance;
+	private SqlQueries host;
 	
-	Person (String cin, String nom, String gend, String add, Date naissance, String villeNaiss, String nation){
+	Person (String cin, String nom, String prenom, String gend, String nation){
 		CIN = cin;
 		name = nom;
+		this.prenom = prenom;
 		gendre = gend;
-		address = add;
-		dateNaissance = naissance;
-		villeDeNaissance = villeNaiss;
 		nationality = nation;
 	}
 
@@ -38,20 +32,18 @@ public class Person {
 		return gendre;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public String getVilleDeNaissance() {
-		return villeDeNaissance;
-	}
 
 	public String getNationality() {
 		return nationality;
 	}
 
-	public Date getDateNaissance() {
-		return dateNaissance;
+	
+	public SqlQueries getRoot() {
+		return host;
+	}
+	
+	public String toString() {
+		return "'" + CIN + "', '" + name + "', '" + prenom + "', '" + gendre + "', '" + nationality + "'";
 	}
 	
 }

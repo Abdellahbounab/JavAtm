@@ -1,13 +1,13 @@
 package com.atm;
 
-import java.util.Date;
 
-public class Admin extends Person {
+public class Admin {
 
 	private final String login = "admin";
 	private final String motDePasse = "admin";
-	Admin(String cin, String nom, String gend, String add, Date naissance, String villeNaiss, String nation) {
-		super(cin, nom, gend, add, naissance, villeNaiss, nation);
+	private SqlQueries host = null;
+	Admin(String cin) {
+		host = new SqlQueries("admin");
 		// TODO Auto-generated constructor stub
 	}
 	public String getLogin() {
@@ -18,6 +18,9 @@ public class Admin extends Person {
 //	}
 	public String getMotDePasse() {
 		return motDePasse;
+	}
+	public SqlQueries getSql() {
+		return host;
 	}
 //	public void setMotDePasse(String motDePasse) {
 //		this.motDePasse = motDePasse;
