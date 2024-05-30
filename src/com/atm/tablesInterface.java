@@ -14,6 +14,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.ListSelectionModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class tablesInterface extends JFrame {
 
@@ -70,6 +72,11 @@ public class tablesInterface extends JFrame {
 		contentPane.add(table);
 		
 		returnBtn = new JButton("Return");
+		returnBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		returnBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 15));
 		returnBtn.setBounds(493, 376, 121, 33);
 		contentPane.add(returnBtn);
