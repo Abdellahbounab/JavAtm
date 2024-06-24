@@ -22,7 +22,7 @@ public class SqlUtils {
 	public	Statement connectedSql() throws SQLException {
 		Connection myConn = null;
 		Statement myStmt = null;
-		try {myConn = DriverManager.getConnection("jdbc:mysql://localhost/javatm", "root", "DearGod123.");} 
+		try {myConn = DriverManager.getConnection("jdbc:mysql://localhost/javatm", "root", "");} 
 		catch (SQLException e) {e.printStackTrace(); System.out.println("Connection Problem");}
 		myStmt = myConn.createStatement();
 		return myStmt;
